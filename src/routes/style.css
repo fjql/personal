@@ -1,0 +1,69 @@
+body {
+  height: 100dvh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #151515;
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    rgb(35, 35, 35) 2px,
+    transparent 0
+  );
+  background-size: 50px 50px;
+  color: #f5efe9;
+  font-family: monospace;
+}
+
+main {
+  text-align: center;
+
+  #wip-wrap {
+    width: 100dvw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #wip-tape {
+      width: 100%;
+      height: 48px;
+
+      position: absolute;
+      z-index: 0;
+
+      background-image: repeating-linear-gradient(
+        -45deg,
+        yellow,
+        yellow 30px,
+        black 30px,
+        black 50px
+      );
+    }
+
+    #wip-tag {
+      height: 48px;
+
+      position: relative;
+      z-index: 3;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      line-height: 1.25em;
+
+      padding: 0px 48px;
+
+      background-color: yellow;
+      color: black;
+
+      p>span#big {
+        font-size: 1.75em;
+        font-weight: bolder;
+        font-variant: small-caps;
+      }
+    }
+  }
+}
