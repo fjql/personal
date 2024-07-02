@@ -1,16 +1,8 @@
 <script>
   import { page } from "$app/stores";
+  import WipTape from "$lib/components/wiptape.svelte"
 </script>
 
 <main>
-  <div id="wip-wrap">
-    <div id="wip-tape"></div>
-    <div id="wip-tag">
-      <p>
-        <span id="big">{$page.status}</span>
-        <br>
-        {$page.error?.message}
-      </p>
-    </div>
-  </div>
+  <WipTape big={$page.status} msg={$page.error?.message} />
 </main>
