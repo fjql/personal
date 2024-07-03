@@ -29,8 +29,8 @@
     text-align: center;
 
     #wip-tape {
-      width: 100%;
       height: 48px;
+      width: 100vw;
 
       position: absolute;
       z-index: 0;
@@ -75,6 +75,13 @@
         font-size: 1.75em;
         font-weight: bolder;
         font-variant: small-caps;
+      }
+
+      @media screen and (max-width: 360px) {
+        width: 70vw;
+        min-width: 140px;
+        
+        padding: 0px 8px;
       }
     }
   }
