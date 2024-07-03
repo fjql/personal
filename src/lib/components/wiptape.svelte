@@ -26,6 +26,8 @@
     align-items: center;
     justify-content: center;
 
+    text-align: center;
+
     #wip-tape {
       width: 100%;
       height: 48px;
