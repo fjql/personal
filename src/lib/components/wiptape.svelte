@@ -52,6 +52,10 @@
           black 20px
         );
       }
+      
+      @media screen and (max-width: 360px) {
+        height: 72px;
+      }
     }
 
     #wip-tag {
@@ -78,6 +82,7 @@
       }
 
       @media screen and (max-width: 360px) {
+        height: 72px;
         width: 70vw;
         min-width: 140px;
         
