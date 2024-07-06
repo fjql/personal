@@ -53,7 +53,7 @@
         );
       }
       
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 400px) {
         height: 72px;
       }
     }
@@ -81,7 +81,7 @@
         font-variant: small-caps;
       }
 
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 400px) {
         height: 72px;
         width: 70vw;
         min-width: 140px;
