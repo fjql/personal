@@ -5,13 +5,12 @@
   export { big, msg };
 </script>
 
-<div id="wip-wrap">
-  <div id="wip-tape"></div>
+<div id="wip-tape">
   <div id="wip-tag">
     <p>
       <span id="big">{big}</span>
+      <br>
       {#if msg}
-        <br />
         {msg}
       {/if}
     </p>
@@ -19,7 +18,8 @@
 </div>
 
 <style>
-  #wip-wrap {
+  #wip-tape {
+    height: 48px;
     width: 100dvw;
 
     display: flex;
@@ -28,34 +28,26 @@
 
     text-align: center;
 
-    #wip-tape {
-      height: 48px;
-      width: 100vw;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      yellow,
+      yellow 30px,
+      black 30px,
+      black 50px
+    );
 
-      position: absolute;
-      z-index: 0;
-
+    @media screen and (max-width: 600px) {
       background-image: repeating-linear-gradient(
         -45deg,
         yellow,
-        yellow 30px,
-        black 30px,
-        black 50px
+        yellow 10px,
+        black 10px,
+        black 20px
       );
+    }
 
-      @media screen and (max-width: 600px) {
-        background-image: repeating-linear-gradient(
-          -45deg,
-          yellow,
-          yellow 10px,
-          black 10px,
-          black 20px
-        );
-      }
-      
-      @media screen and (max-width: 400px) {
-        height: 72px;
-      }
+    @media screen and (max-width: 400px) {
+      height: 72px;
     }
 
     #wip-tag {
@@ -85,7 +77,7 @@
         height: 72px;
         width: 70vw;
         min-width: 140px;
-        
+
         padding: 0px 8px;
       }
     }
