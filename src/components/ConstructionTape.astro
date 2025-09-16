@@ -18,20 +18,18 @@ const { title = "Website Under Construction", desc } = Astro.props;
   }
 </style>
 
-<main class="h-dvh w-dvw flex items-center justify-center">
-  <div class="sm:h-72px w-dvw flex items-center justify-center tape">
-    <div
-      class="h-full w-256px text-center caption p-4 px-8 flex flex-col items-center justify-center"
-    >
-      <p class="font-bold">{title}</p>
-      {
-        desc && (
-          <>
-            <br />
-            <p>{desc}</p>
-          </>
-        )
-      }
-    </div>
+<div class="sm:h-72px w-dvw flex items-center justify-center tape">
+  <div
+    class="h-full w-256px text-center caption p-4 px-8 flex flex-col items-center justify-center"
+  >
+    <p class="font-bold">{title}</p>
+    {
+      desc && (
+        <>
+          <br />
+          <p>{desc}</p>
+        </>
+      )
+    }
   </div>
-</main>
+</div>

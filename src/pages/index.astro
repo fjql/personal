@@ -2,7 +2,7 @@
 import "../styles/global.css";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Card from "../components/Card.astro";
+import ConstructionTape from "../components/ConstructionTape.astro";
 ---
 
 <BaseLayout>
@@ -14,17 +14,7 @@ import Card from "../components/Card.astro";
         <p class="text-gray-400 font-semibold">hi, i'm</p>
         <h1 class="text-4xl font-bold">Frederick Lim</h1>
       </div>
-      <div
-        class="w-full grid grid-cols-1 grid-rows-2 lg:grid-cols-2 gap-3"
-      >
-        <Card title="CTFs"><p>CTF 1</p></Card>
-        <Card title="Projects"><p>Project 1</p></Card>
-        <Card title="Blog" className="col-span-full">
-          <p>Blog Post 1</p>
-          <p>Blog Post 2</p>
-          <p>Blog Post 3</p>
-        </Card>
-      </div>
     </div>
+		<ConstructionTape />
   </main>
 </BaseLayout>
