@@ -8,19 +8,40 @@ import ConstructionTape from "../components/ConstructionTape.astro";
 ---
 
 <BaseLayout>
+  <script is:inline>
+    const theme = (() => {
+      const localStorageTheme = localStorage?.getItem("theme") ?? "";
+      if (["dark", "light"].includes(localStorageTheme)) {
+        return localStorageTheme;
+      }
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+      return "light";
+    })();
+
+    if (theme === "light") {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+
+    window.localStorage.setItem("theme", theme);
+  </script>
+
   <main
     class="h-dvh w-dvw flex flex-col items-center justify-center gap-3 font-mono"
   >
     <div class="w-3/4 xl:w-1/2 flex flex-col content-center gap-3">
       <div class="w-full leading-2">
-        <p class="text-gray-400 font-semibold">hi, i'm</p>
-        <h1 class="text-4xl font-bold">Frederick Lim</h1>
+        <p class="text-neutral-400 font-semibold">hi, i'm</p>
+        <h1 class="text-4xl font-bold text-neutral-900 dark:text-neutral-200">Frederick Lim</h1>
         <a href="https://github.com/fjql"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
             height="18"
-            class="bi bi-github fill-gray-400"
+            class="bi bi-github fill-neutral-400"
             viewBox="0 0 18 18"
           >
             <path
@@ -31,13 +52,13 @@ import ConstructionTape from "../components/ConstructionTape.astro";
       </div>
       <div class="w-full grid grid-cols-1 grid-rows-2 lg:grid-cols-2 gap-3">
         <Card title="CTFs">
-          <p class="text-gray-400">none at the moment...</p>
+          <p class="text-neutral-400">none at the moment...</p>
         </Card>
         <Card title="Projects">
-          <p class="text-gray-400">none at the moment...</p>
+          <p class="text-neutral-400">none at the moment...</p>
         </Card>
         <Card title="Blog" className="col-span-full">
-          <p class="text-gray-400">none at the moment...</p>
+          <p class="text-neutral-400">none at the moment...</p>
         </Card>
       </div>
     </div>
