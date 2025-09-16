@@ -1,5 +1,5 @@
 ---
-const { title = "Website Under Construction", desc } = Astro.props;
+const { title, desc, className } = Astro.props;
 ---
 
 <style>
@@ -18,7 +18,12 @@ const { title = "Website Under Construction", desc } = Astro.props;
   }
 </style>
 
-<div class="sm:h-72px w-dvw flex items-center justify-center tape">
+<div
+  class:list={[
+    "h-32px md:h-72px w-full flex items-center justify-center tape",
+    className,
+  ]}
+>
   <div
     class="h-full w-256px text-center caption p-4 px-8 flex flex-col items-center justify-center"
   >
