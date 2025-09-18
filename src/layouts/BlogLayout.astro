@@ -1,0 +1,49 @@
+---
+import "../styles/global.css";
+
+import Prose from "../components/Prose.astro";
+
+const { title, description, pubDate, modDate } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white dark:bg-neutral-900 flex flex-col items-center gap-3">
+    <main class="h-auto w-[70dvw]">
+      <Prose>
+        <p>{pubDate.toLocaleDateString()}{modDate && modDate.toLocaleDateString()}</p>
+        <h1>{title}</h1>
+        {description && <p>{description}</p>}
+        <hr />
+        <slot />
+      </Prose>
+    </main>
+
+    <script is:inline>
+      const theme = (() => {
+        const localStorageTheme = localStorage?.getItem("theme") ?? "";
+        if (["dark", "light"].includes(localStorageTheme)) {
+          return localStorageTheme;
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+
+      if (theme === "light") {
+        document.documentElement.classList.remove("dark");
+      } else {
+        document.documentElement.classList.add("dark");
+      }
+
+      window.localStorage.setItem("theme", theme);
+    </script>
+  </body>
+</html>
