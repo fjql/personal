@@ -1,2 +1,10 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+.my-name::after {
+  content: "fjql";
+}
+
+.my-name:hover::after {
+  content: "Frederick Lim";
+}

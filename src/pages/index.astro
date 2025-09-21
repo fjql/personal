@@ -8,36 +8,13 @@ import ConstructionTape from "../components/ConstructionTape.astro";
 ---
 
 <BaseLayout>
-  <script is:inline>
-    const theme = (() => {
-      const localStorageTheme = localStorage?.getItem("theme") ?? "";
-      if (["dark", "light"].includes(localStorageTheme)) {
-        return localStorageTheme;
-      }
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        return "dark";
-      }
-      return "light";
-    })();
-
-    if (theme === "light") {
-      document.documentElement.classList.remove("dark");
-    } else {
-      document.documentElement.classList.add("dark");
-    }
-
-    window.localStorage.setItem("theme", theme);
-  </script>
-
   <main
     class="h-dvh w-dvw flex flex-col items-center justify-center gap-3 font-mono"
   >
     <div class="w-3/4 xl:w-1/2 flex flex-col content-center gap-3">
       <div class="w-full leading-2">
         <p class="text-neutral-400 font-semibold">hi, i'm</p>
-        <h1 class="text-4xl font-bold text-neutral-900 dark:text-neutral-200">
-          Frederick Lim
-        </h1>
+        <h1 class="text-4xl font-bold text-neutral-900 dark:text-neutral-200 my-name"></h1>
         <a href="https://github.com/fjql"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
