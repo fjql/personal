@@ -8,10 +8,11 @@ const { title = "fjql" } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
+    <meta name="viewport" content="width=device-width" /></head
+  >:
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+
   <body class="bg-white dark:bg-neutral-900">
     <slot />
 
@@ -36,4 +37,5 @@ const { title = "fjql" } = Astro.props;
       window.localStorage.setItem("theme", theme);
     </script>
   </body>
+
 </html>
