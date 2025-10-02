@@ -3,9 +3,9 @@ const { id, title, description, pubDate, modDate } = Astro.props;
 ---
 <a href={`blog/${id}`}>
 <div
-  class="border-1 border-neutral-300 rounded-xs px-2 py-1 flex flex-col gap-0"
+  class="border-1 border-neutral-300 dark:border-neutral-600 rounded-xs px-2 py-1 flex flex-col gap-0"
 >
-  <p class="text-sm text-neutral-600">{pubDate.toLocaleDateString()}</p>
+  <p class="text-sm text-neutral-600 dark:text-neutral-300">{pubDate.toLocaleDateString()}</p>
   <h1 class="text-xl font-semibold text-neutral-900 dark:text-neutral-200">
     {title}
   </h1>

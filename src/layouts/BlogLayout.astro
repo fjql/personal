@@ -26,7 +26,7 @@ const { title, description, pubDate, modDate } = Astro.props;
         </p>
         <h1>{title}</h1>
         {description && <p>{description}</p>}
-        <hr />
+        <hr class="border-neutral-300 dark:border-neutral-600" />
         <slot />
       </Prose>
     </main>
