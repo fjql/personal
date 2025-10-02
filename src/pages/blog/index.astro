@@ -3,22 +3,33 @@ import "../../styles/global.css";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Card from "../../components/Card.astro";
+import Preview from "../../components/Preview.astro";
 import { getCollection } from "astro:content";
 
-const blogEntries = await getCollection("blog");
+const blog = await getCollection("blog");
 ---
 
 <BaseLayout>
   <main
     class="h-dvh w-dvw flex flex-col items-center justify-center gap-3 font-mono"
   >
-    <div class="w-3/4 xl:w-1/2 flex flex-col content-center gap-3">
-      <Card title="Blog" className="col-span-full">
+    <div class="w-3/4 xl:w-1/2 max-h-3/4 flex flex-col content-center gap-3">
+      <Card title="Blog" className="overflow-auto">
         {
-          blogEntries.length == 0 ? (
+          blog.length == 0 ? (
             <p class="text-neutral-400">none at the moment...</p>
           ) : (
-            <p class="text-neutral-400">not yet implemented...</p>
+            blog.map((post) => {
+              return (
+                <Preview
+                  id={post.id}
+                  title={post.data.title}
+                  description={post.data.description}
+                  pubDate={post.data.pubDate}
+                  modDate={post.data.modDate}
+                />
+              );
+            })
           )
         }
       </Card>
