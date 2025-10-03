@@ -17,7 +17,9 @@ const { title, description, pubDate, modDate } = Astro.props;
   <body
     class="bg-white dark:bg-neutral-900 h-dvh w-dvw flex flex-col items-center justify-center gap-3 font-mono"
   >
-    <main class="w-3/4 xl:w-1/2 flex flex-col content-center gap-3">
+    <main
+      class="w-3/4 xl:w-1/2 flex flex-col content-center gap-3 px-2 py-1 border-1 border-neutral-300 dark:border-neutral-600 rounded-sm"
+    >
       <Prose>
         <p>
           {pubDate.toLocaleDateString()}{
