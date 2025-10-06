@@ -1,7 +1,7 @@
 ---
-const { id, title, description, pubDate, modDate } = Astro.props;
+const { id, title, description, pubDate, modDate, link } = Astro.props;
 ---
-<a href={`blog/${id}`}>
+<a href={link}>
 <div
   class="border-1 border-neutral-300 dark:border-neutral-600 rounded-xs px-2 py-1 flex flex-col gap-0"
 >

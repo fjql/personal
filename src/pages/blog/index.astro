@@ -22,6 +22,7 @@ const blog = await getCollection("blog");
             blog.map((post) => {
               return (
                 <Preview
+                  link={`${post.id}`}
                   id={post.id}
                   title={post.data.title}
                   description={post.data.description}
