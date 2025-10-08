@@ -23,7 +23,7 @@ const { title, description, pubDate, modDate } = Astro.props;
       <div>
         <p class="text-xs text-neutral-600 dark:text-neutral-300">
           {
-            `Published: ${pubDate.toLocaleDateString()}${modDate && `, Modified: ${modDate.toLocaleDateString()}`}`
+            `Published: ${pubDate.toLocaleDateString()}${modDate ? `, Modified: ${modDate.toLocaleDateString()}` : ""}`
           }
         </p>
         <h1
