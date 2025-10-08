@@ -18,19 +18,31 @@ const { title, description, pubDate, modDate } = Astro.props;
     class="bg-white dark:bg-neutral-900 h-dvh w-dvw flex flex-col items-center justify-center gap-3 font-mono"
   >
     <main
-      class="w-3/4 xl:w-1/2 flex flex-col content-center px-2 py-1 border-1 border-neutral-300 dark:border-neutral-600 rounded-sm"
+      class="w-3/4 xl:w-1/2 h-fit flex flex-col content-center px-2 py-1 border-1 border-neutral-300 dark:border-neutral-600 rounded-sm gap-3 overflow-auto"
     >
-      <Prose>
-        <p>
-          {pubDate.toLocaleDateString()}{
-            modDate && modDate.toLocaleDateString()
+      <div>
+        <p class="text-xs text-neutral-600 dark:text-neutral-300">
+          {
+            `Published: ${pubDate.toLocaleDateString()}${modDate && `, Modified: ${modDate.toLocaleDateString()}`}`
           }
         </p>
-        <h1>{title}</h1>
-        {description && <p>{description}</p>}
-        <hr class="border-neutral-300 dark:border-neutral-600" />
+        <h1
+          class="text-3xl font-semibold text-neutral-900 dark:text-neutral-200"
+        >
+          {title}
+        </h1>
+        {
+          description && (
+            <p class="text-neutral-600 dark:text-neutral-300">{description}</p>
+          )
+        }
+      </div>
+      <hr class="border-neutral-300 dark:border-neutral-600" />
+      <Prose>
         <slot />
       </Prose>
+      <hr class="border-neutral-300 dark:border-neutral-600" />
+      <a href="/blog" class="text-right"><p>Back</p></a>
     </main>
 
     <script is:inline>
