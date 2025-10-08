@@ -9,6 +9,14 @@
   }
 }
 
+a {
+  @apply text-orange-600;
+
+  @variant dark {
+    @apply text-orange-400;
+  }
+}
+
 .my-name::after {
   content: "fjql";
 }

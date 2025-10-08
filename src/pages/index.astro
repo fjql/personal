@@ -2,6 +2,7 @@
 import "../styles/global.css";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogCollection from "../components/BlogCollection.astro";
 import Card from "../components/Card.astro";
 import Preview from "../components/Preview.astro";
 import ConstructionTape from "../components/ConstructionTape.astro";
@@ -11,7 +12,7 @@ import ConstructionTape from "../components/ConstructionTape.astro";
   <main
     class="h-dvh w-dvw flex flex-col items-center justify-center gap-3 font-mono"
   >
-    <div class="w-3/4 xl:w-1/2 flex flex-col content-center gap-3">
+    <div class="w-3/4 lg:w-1/2 flex flex-col content-center gap-3">
       <div class="w-full leading-2">
         <p class="text-neutral-400 font-semibold">hi, i'm</p>
         <h1
@@ -32,18 +33,13 @@ import ConstructionTape from "../components/ConstructionTape.astro";
           </svg>
         </a>
       </div>
-      <div class="w-full grid grid-cols-1 grid-rows-2 lg:grid-cols-2 gap-3">
+      <div class="w-full flex flex-col lg:flex-row gap-3">
+        <BlogCollection count="2" />
         <Card title="CTFs">
-          <p class="text-neutral-400">none at the moment...</p>
-        </Card>
-        <Card title="Projects">
-          <p class="text-neutral-400">none at the moment...</p>
-        </Card>
-        <Card title="Blog" className="col-span-full">
           <p class="text-neutral-400">none at the moment...</p>
         </Card>
       </div>
     </div>
-    <ConstructionTape title="Website Under Construction" className="absolute" />
+    <ConstructionTape title="Website Under Construction" className="absolute"/>
   </main>
 </BaseLayout>
