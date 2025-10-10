@@ -1,0 +1,16 @@
+---
+import "../../styles/global.css";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CTFCollection from "../../components/CTFCollection.astro";
+---
+
+<BaseLayout>
+  <main
+    class="h-dvh w-dvw flex flex-col items-center justify-center gap-3 font-mono"
+  >
+    <div class="w-3/4 xl:w-1/2 max-h-3/4 flex flex-col content-center gap-3">
+      <CTFCollection />
+    </div>
+  </main>
+</BaseLayout>

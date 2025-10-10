@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+
+import ConstructionTape from "../components/ConstructionTape.astro";
+
+const { title, description, pubDate, modDate } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="bg-white dark:bg-neutral-900 h-dvh w-dvw flex flex-col items-center justify-center gap-3 font-mono"
+  >
+    <main
+      class="w-3/4 xl:w-1/2 max-h-11/12 flex flex-col content-center px-2 py-1 border-1 border-neutral-300 dark:border-neutral-600 rounded-sm gap-3"
+    >
+      <hr class="border-neutral-300 dark:border-neutral-600" />
+      <ConstructionTape />
+      <hr class="border-neutral-300 dark:border-neutral-600" />
+      <a href="/blog" class="text-right"><p>Back</p></a>
+    </main>
+
+    <script is:inline>
+      const theme = (() => {
+        const localStorageTheme = localStorage?.getItem("theme") ?? "";
+        if (["dark", "light"].includes(localStorageTheme)) {
+          return localStorageTheme;
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+
+      if (theme === "light") {
+        document.documentElement.classList.remove("dark");
+      } else {
+        document.documentElement.classList.add("dark");
+      }
+
+      window.localStorage.setItem("theme", theme);
+    </script>
+  </body>
+</html>
