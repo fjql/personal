@@ -1,8 +1,8 @@
 ---
 title: blog blog bloggity
 description: insert something witty
-pubDate: 1983-01-1
-modDate: 1987-01-1
+pubDate: 01-01-1983
+modDate: 01-01-1987
 ---
 
 Hello, World!
