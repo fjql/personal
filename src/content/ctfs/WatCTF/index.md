@@ -2,5 +2,5 @@
 ctf: WatCTF
 team: rdtobg
 rank: 229th
-date: 2025-10-09
+date: 09-10-2025
 ---

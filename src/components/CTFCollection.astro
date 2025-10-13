@@ -7,7 +7,9 @@ import { getCollection } from "astro:content";
 
 const { count = 0 } = Astro.props;
 
-let ctfs = await getCollection("ctfs");
+let ctfs = (await getCollection("ctfs")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
 let trueCount = ctfs.length;
 
 if (count != 0) {
