@@ -3,9 +3,7 @@ import "../styles/global.css";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogCollection from "../components/BlogCollection.astro";
-import Card from "../components/Card.astro";
-import Preview from "../components/Preview.astro";
-import ConstructionTape from "../components/ConstructionTape.astro";
+import CTFCollection from "../components/CTFCollection.astro";
 ---
 
 <BaseLayout>
@@ -35,11 +33,8 @@ import ConstructionTape from "../components/ConstructionTape.astro";
       </div>
       <div class="w-full flex flex-col lg:flex-row gap-3">
         <BlogCollection count="2" />
-        <Card title="CTFs">
-          <p class="text-neutral-400">none at the moment...</p>
-        </Card>
+        <CTFCollection count="2" />
       </div>
     </div>
-    <ConstructionTape title="Website Under Construction" className="absolute" />
   </main>
 </BaseLayout>

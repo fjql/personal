@@ -2,7 +2,7 @@
 import "../styles/global.css";
 
 import Card from "../components/Card.astro";
-import Preview from "../components/Preview.astro";
+import BlogPreview from "../components/BlogPreview.astro";
 import { getCollection } from "astro:content";
 
 const { count = 0 } = Astro.props;
@@ -22,7 +22,7 @@ if (count != 0) {
     ) : (
       blog.map((post) => {
         return (
-          <Preview
+          <BlogPreview
             id={`/blog/${post.id}`}
             title={post.data.title}
             description={post.data.description}

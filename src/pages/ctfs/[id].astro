@@ -1,12 +1,12 @@
 ---
 import { getCollection, render } from "astro:content";
 
-import BlogLayout from "../../layouts/BlogLayout.astro";
+import CTFLayout from "../../layouts/CTFLayout.astro";
 
 export const getStaticPaths = async () => {
-  const blog = await getCollection("blog");
+  const ctfs = await getCollection("ctfs");
 
-  return blog.map((post) => {
+  return ctfs.map((post) => {
     return { params: { id: post.id }, props: { post } };
   });
 };
@@ -14,14 +14,9 @@ export const getStaticPaths = async () => {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
-const { title, description, pubDate, modDate } = post.data;
+const { ctf, team, rank, date } = post.data;
 ---
 
-<BlogLayout
-  title={title}
-  description={description}
-  pubDate={pubDate}
-  modDate={modDate}
->
+<CTFLayout ctf={ctf} team={team} rank={rank} date={date}>
   <Content />
-</BlogLayout>
+</CTFLayout>

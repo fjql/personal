@@ -2,31 +2,32 @@
 import "../styles/global.css";
 
 import Card from "../components/Card.astro";
-import Preview from "../components/Preview.astro";
+import CTFPreview from "../components/CTFPreview.astro";
 import { getCollection } from "astro:content";
 
 const { count = 0 } = Astro.props;
 
-let blog = await getCollection("ctfs");
-let trueCount = blog.length;
+let ctfs = await getCollection("ctfs");
+let trueCount = ctfs.length;
 
 if (count != 0) {
-  blog = blog.slice(0, count);
+  ctfs = ctfs.slice(0, count);
 }
 ---
 
 <Card title="CTFs" className="overflow-auto">
   {
-    blog.length == 0 ? (
+    ctfs.length == 0 ? (
       <p class="text-neutral-400">none at the moment...</p>
     ) : (
-      blog.map((post) => {
+      ctfs.map((post) => {
         return (
-          <Preview
-            id={`/blog/${post.id}`}
+          <CTFPreview
+            id={`/ctfs/${post.id}`}
             ctf={post.data.ctf}
-            chalTitle={post.data.chalTitle}
-            chalDesc={post.data.chalDesc}
+            team={post.data.team}
+            rank={post.data.rank}
+            date={post.data.date}
           />
         );
       })
@@ -36,7 +37,7 @@ if (count != 0) {
     count != 0 && count < trueCount && (
       <div class="text-right">
         <hr class="border-neutral-300 dark:border-neutral-600" />
-        <a href="/blog">
+        <a href="/ctfs">
           <p>See More...</p>
         </a>
       </div>
