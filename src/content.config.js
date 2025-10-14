@@ -24,6 +24,7 @@ const ctfs = defineCollection({
     ctf: z.string(),
     team: z.string(),
     rank: z.string(),
+    points: z.number(),
     date: z.coerce.date()
   })
 })

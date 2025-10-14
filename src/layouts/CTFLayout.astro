@@ -3,7 +3,7 @@ import "../styles/global.css";
 
 import ConstructionTape from "../components/ConstructionTape.astro";
 
-const { ctf, team, rank, date } = Astro.props;
+const { ctf, team, rank, points, date } = Astro.props;
 ---
 
 <html lang="en">
@@ -35,6 +35,8 @@ const { ctf, team, rank, date } = Astro.props;
               Team Name: {team}
               ,
               Rank: {rank}
+              ,
+              Points: {points}
             </p>
           )
         }
