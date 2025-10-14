@@ -14,9 +14,9 @@ export const getStaticPaths = async () => {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
-const { ctf, team, rank, date } = post.data;
+const { ctf, team, rank, points, date } = post.data;
 ---
 
-<CTFLayout ctf={ctf} team={team} rank={rank} date={date}>
+<CTFLayout ctf={ctf} team={team} rank={rank} points={points} date={date}>
   <Content />
 </CTFLayout>
