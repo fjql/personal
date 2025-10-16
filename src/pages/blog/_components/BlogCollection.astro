@@ -13,6 +13,8 @@ let trueCount = blog.length;
 if (count != 0) {
   blog = blog.slice(0, count);
 }
+
+let curPath = Astro.url.pathname;
 ---
 
 <Card title="Blog" className="overflow-auto">
@@ -38,7 +40,17 @@ if (count != 0) {
       <div class="text-right text-sm">
         <hr class="border-neutral-300 dark:border-neutral-600" />
         <a href="/ctfs">
-          <p>See More...</p>
+          <p>See More</p>
+        </a>
+      </div>
+    )
+  }
+  {
+    curPath === "/blog" && (
+      <div class="text-right text-sm">
+        <hr class="border-neutral-300 dark:border-neutral-600" />
+        <a href="/">
+          <p>Back</p>
         </a>
       </div>
     )
