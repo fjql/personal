@@ -31,18 +31,18 @@ const { ctf, team, rank, points, date } = Astro.props;
         </h1>
         {
           team && (
-            <p class="text-neutral-600 dark:text-neutral-300">
+            <p class="text-neutral-600 dark:text-neutral-300 gap-0">
               Team Name: {team}
-              ,
+              <br />
               Rank: {rank}
-              ,
+              <br />
               Points: {points}
             </p>
           )
         }
       </div>
       <hr class="border-neutral-300 dark:border-neutral-600" />
-      <ConstructionTape title="Website Under Construction"/>
+      <ConstructionTape title="Website Under Construction" />
       <hr class="border-neutral-300 dark:border-neutral-600" />
       <a href="/ctfs" class="text-right"><p>Back</p></a>
     </main>
