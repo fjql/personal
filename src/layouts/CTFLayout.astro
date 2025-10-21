@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 
-import ConstructionTape from "../components/ConstructionTape.astro";
+import Prose from "../components/Prose.astro";
 
 const { ctf, team, rank, points, date } = Astro.props;
 ---
@@ -42,7 +42,9 @@ const { ctf, team, rank, points, date } = Astro.props;
         }
       </div>
       <hr class="border-neutral-300 dark:border-neutral-600" />
-      <ConstructionTape title="Website Under Construction" />
+      <Prose>
+        <slot />
+      </Prose>
       <hr class="border-neutral-300 dark:border-neutral-600" />
       <a href="/ctfs" class="text-right"><p>Back</p></a>
     </main>

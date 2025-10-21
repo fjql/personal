@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 
+import ConstructionTape from "../../components/ConstructionTape.astro";
 import CTFLayout from "../../layouts/CTFLayout.astro";
 
 export const getStaticPaths = async () => {
@@ -18,5 +19,11 @@ const { ctf, team, rank, points, date } = post.data;
 ---
 
 <CTFLayout ctf={ctf} team={team} rank={rank} points={points} date={date}>
-  <Content />
+  {
+    post.body ? (
+      <Content />
+    ) : (
+      <ConstructionTape title="Content not yet added" />
+    )
+  }
 </CTFLayout>
