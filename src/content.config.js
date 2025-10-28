@@ -17,8 +17,8 @@ const blog = defineCollection({
 
 const ctfs = defineCollection({
   loader: glob({
-    pattern: '*/*.{md,mdx}',
-    base: './src/content/ctfs'
+    pattern: './**/*.{md,mdx}',
+    base: './src/content/ctfs/'
   }),
   schema: () => z.object({
     ctf: z.string(),
